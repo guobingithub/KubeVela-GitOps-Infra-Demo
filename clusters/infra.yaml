@@ -11,7 +11,7 @@ spec:
       repoType: git
       url: https://github.com/guobingithub/KubeVela-GitOps-Infra-Demo
       ## secretRef: git-secret
-      pullInterval: 10m
+      pullInterval: 2m
       git:
         branch: main
       path: ./infrastructure
