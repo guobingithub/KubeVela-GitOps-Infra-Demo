@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: mysql
-  namespace: default
+  namespace: gb001
 spec:
   components:
     - name: mysql-controller
