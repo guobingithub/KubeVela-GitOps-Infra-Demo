@@ -12,7 +12,7 @@ spec:
         port: 8088
         env:
           - name: DB_HOST
-            value: mysql-cluster-mysql.default.svc.cluster.local:3306
+            value: mysql-cluster-mysql.gb001.svc.cluster.local:3306
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:
@@ -34,14 +34,3 @@ spec:
         outputs:
           - name: server-status
             valueFrom: output.spec.template.spec.containers[0].image + " image applied."
-      - name: slack-notification
-        type: webhook-notification
-        inputs:
-          - from: server-status
-            parameterKey: slack.message.text
-        properties:
-          slack:
-            url:
-              fromSecret:
-                name: my-secret
-                key: slack
