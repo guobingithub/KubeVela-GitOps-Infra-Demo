@@ -23,7 +23,7 @@ spec:
           properties:
             classInSpec: true
             class: nginx
-            domain: testsvc.example.com
+            domain: testsvc002.example.com
             http:
               /: 8088
 
