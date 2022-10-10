@@ -19,8 +19,10 @@ spec:
                 name: mysql-secret
                 key: ROOT_PASSWORD
       traits:
-        - type: ingress
+        - type: gateway
           properties:
+            classInSpec: true
+            class: nginx
             domain: testsvc.example.com
             http:
               /: 8088
