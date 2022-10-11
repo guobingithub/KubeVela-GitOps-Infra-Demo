@@ -16,7 +16,7 @@ spec:
         branch: for-developers
       path: ./apps
       imageRepository:
-        image: ghcr.io/fogdong/test-fog
+        image: ghcr.io/guobingithub/test-fog
         # secretRef: imagesecret
         filterTags:
           pattern: '^master-[a-f0-9]+-(?P<ts>[0-9]+)'
