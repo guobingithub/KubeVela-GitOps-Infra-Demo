@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: infra
-  namespace: gb001
+  namespace: gb002
 spec:
   components:
   - name: database-config
@@ -13,5 +13,5 @@ spec:
       ## secretRef: git-secret
       pullInterval: 2m
       git:
-        branch: main
+        branch: for-developers
       path: ./infrastructure

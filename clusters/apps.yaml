@@ -2,7 +2,7 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: apps
-  namespace: gb001
+  namespace: gb002
 spec:
   components:
   - name: apps
@@ -13,5 +13,15 @@ spec:
       ## secretRef: git-secret
       pullInterval: 1m
       git:
-        branch: main
+        branch: for-developers
       path: ./apps
+      imageRepository:
+        image: ghcr.io/fogdong/test-fog
+        # secretRef: imagesecret
+        filterTags:
+          pattern: '^master-[a-f0-9]+-(?P<ts>[0-9]+)'
+          extract: '$ts'
+        policy:
+          numerical:
+            order: asc
+        commitMessage: "Image: {{range .Updated.Images}}{{println .}}{{end}}"
