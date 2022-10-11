@@ -8,11 +8,11 @@ spec:
     - name: my-server
       type: webservice
       properties:
-        image: ghcr.io/fogdong/test-fog:master-8a4cf881-1633951858 # {"$imagepolicy": "default:apps"}
+        image: ghcr.io/fogdong/test-fog:master-8a4cf881-1633951858 # {"$imagepolicy": "gb002:apps"}
         port: 8088
         env:
           - name: DB_HOST
-            value: mysql-cluster-mysql.gb001.svc.cluster.local:3306
+            value: mysql-cluster-mysql.gb002.svc.cluster.local:3306
           - name: DB_PASSWORD
             valueFrom:
               secretKeyRef:

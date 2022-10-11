@@ -24,4 +24,8 @@ spec:
         policy:
           numerical:
             order: asc
-        commitMessage: "Image: {{range .Updated.Images}}{{println .}}{{end}}"
+        # 追加提交信息
+        commitMessage: "Image: {
+               {range .Updated.Images}}{
+               {println .}}{
+               {end}}"
